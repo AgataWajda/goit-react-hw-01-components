@@ -1,5 +1,7 @@
 import { Profile } from 'components/Profile';
+import { Panel, Stats } from 'components/Stats';
 import users from 'data/user.json';
+import stats from 'data/data.json';
 
 export const App = ({ children }) => {
   return (
@@ -13,6 +15,9 @@ export const App = ({ children }) => {
         views={users.user.stats.views}
         likes={users.user.stats.likes}
       />
+      <Panel title="Upload stats">
+        <Stats stats={stats}></Stats>
+      </Panel>
     </div>
   );
 };
