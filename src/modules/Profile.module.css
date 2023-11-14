@@ -1,6 +1,6 @@
 .profile {
   background-color: #fff;
-  width: 20%;
+  width: 303px;
   padding-top: 10px;
 
   border-radius: 5px;
@@ -40,6 +40,7 @@
   display: flex;
   padding: 0;
   width: 100%;
+  margin-bottom: 0px;
 }
 
 .stats li {
@@ -55,9 +56,9 @@
 }
 
 .label {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .quantity {
-  font-weight: 600;
+  font-weight: 700;
 }
