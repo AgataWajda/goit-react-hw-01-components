@@ -1,27 +1,38 @@
 import css from '../modules/Friends.module.css';
+import PropTypes from 'prop-types';
 
 export const FriendsList = ({ friends }) => (
   <ul className={css.friendList}>
     {friends.map(friend => {
-      let isOnline;
+      let online;
+      const { isOnline, id, avatar, name } = friend;
 
-      if (friend.isOnline === true) {
-        isOnline = css.statusOnline;
-      } else if (friend.isOnline === false) {
-        isOnline = css.statusOff;
+      if (isOnline === true) {
+        online = css.statusOnline;
+      } else if (isOnline === false) {
+        online = css.statusOff;
       }
       return (
-        <li className={css.item} key={friend.id}>
-          <div className={isOnline}>{friend.isOnline}</div>
+        <li className={css.item} key={id}>
+          <div className={online}></div>
           <img
             className={css.avatar}
-            src={friend.avatar}
+            src={avatar}
             alt="User avatar"
             width="48"
           />
-          <p className={css.name}>{friend.name}</p>
+          <p className={css.name}>{name}</p>
         </li>
       );
     })}
   </ul>
 );
+
+FriendsList.propTypes = {
+  friends: PropTypes.array,
+  friend: PropTypes.object,
+  isOnline: PropTypes.bool,
+  id: PropTypes.string,
+  avatar: PropTypes.string,
+  name: PropTypes.string,
+};

@@ -1,4 +1,5 @@
 import css from '../modules/Stats.module.css';
+import PropTypes from 'prop-types';
 
 export const Panel = ({ title, children }) => {
   const titleUpper = title.toUpperCase();
@@ -12,12 +13,27 @@ export const Panel = ({ title, children }) => {
 export const Stats = ({ stats }) => {
   return (
     <ul className={css.statList}>
-      {stats.map(stat => (
-        <li className={css.item} key={stat.id}>
-          <span className={css.label}>{stat.label}</span>
-          <span className={css.percentage}>{stat.percentage}%</span>
-        </li>
-      ))}
+      {stats.map(stat => {
+        const { id, label, percentage } = stat;
+        return (
+          <li className={css.item} key={id}>
+            <span className={css.label}>{label}</span>
+            <span className={css.percentage}>{percentage}%</span>
+          </li>
+        );
+      })}
     </ul>
   );
+};
+
+Panel.propTypes = {
+  title: PropTypes.string,
+};
+
+Stats.propTypes = {
+  stats: PropTypes.array,
+  stat: PropTypes.object,
+  label: PropTypes.string,
+  item: PropTypes.string,
+  percentage: PropTypes.string,
 };

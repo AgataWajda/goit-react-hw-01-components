@@ -1,0 +1,33 @@
+.transactionsHistory {
+  position: absolute;
+  top: 0;
+  left: 450px;
+  text-align: center;
+}
+
+.titles {
+  background-color: rgb(88, 88, 219);
+  color: aliceblue;
+}
+
+.titleItem {
+  width: 200px;
+  padding: 10px;
+}
+
+.row {
+  background-color: aliceblue;
+}
+
+.row:nth-of-type(2n) {
+  background-color: #add8e6;
+}
+
+.tableItem {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-size: 15px;
+  font-weight: 500;
+  padding-left: 10px;
+  color: #454141;
+}

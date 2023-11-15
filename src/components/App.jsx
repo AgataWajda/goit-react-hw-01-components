@@ -1,9 +1,11 @@
 import { Profile } from 'components/Profile';
 import { Panel, Stats } from 'components/Stats';
 import { FriendsList } from './Friends';
+import { Transactions } from './Transactions';
 import users from 'data/user.json';
 import stats from 'data/data.json';
 import friends from 'data/friends.json';
+import transactions from 'data/transactions.json';
 
 export const App = ({ children }) => {
   return (
@@ -21,6 +23,7 @@ export const App = ({ children }) => {
         <Stats stats={stats}></Stats>
       </Panel>
       <FriendsList friends={friends}></FriendsList>
+      <Transactions transactions={transactions}></Transactions>
     </div>
   );
 };
