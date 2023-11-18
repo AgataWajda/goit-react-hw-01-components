@@ -1,4 +1,4 @@
-import css from '../modules/Stats.module.css';
+import css from './Stats.module.css';
 import PropTypes from 'prop-types';
 
 export const Panel = ({ title, children }) => {
@@ -31,9 +31,11 @@ Panel.propTypes = {
 };
 
 Stats.propTypes = {
-  stats: PropTypes.array,
-  stat: PropTypes.object,
-  label: PropTypes.string,
-  item: PropTypes.string,
-  percentage: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string,
+      item: PropTypes.string,
+      percentage: PropTypes.string,
+    })
+  ),
 };
